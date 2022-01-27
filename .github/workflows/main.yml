@@ -1,0 +1,17 @@
+name: MAIN
+on: push
+
+env:
+  FOO: "BAR"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - id: dotenv
+        uses: falti/dotenv-action@v0.2.7
+        with:
+          path: '.env'
+      # - name: Deploy
+      #   run: |
+      #     echo "${{ env.FOO }}"
